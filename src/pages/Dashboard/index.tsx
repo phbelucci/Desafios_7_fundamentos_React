@@ -112,7 +112,7 @@ const Dashboard: React.FC = () => {
                     <td>{transaction.category.title}</td>
                     <td>{transaction.formattedDate}</td>
                   </tr>
-                ))
+                ));
               }
 
             </tbody>
