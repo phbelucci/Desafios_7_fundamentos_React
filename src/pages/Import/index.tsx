@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+//lib que serve para formatação de tamanho de arquivos para formatos mais legiveis
 import filesize from 'filesize';
 
 import Header from '../../components/Header';
@@ -35,7 +36,13 @@ const Import: React.FC = () => {
   }
 
   function submitFile(files: File[]): void {
-    // TODO
+    const uploadFiles = files.map(file => ({
+      file,
+      name: file.name,
+      readableSize: filesize(file.size),
+    }));
+
+    setUploadedFiles(uploadFiles);
   }
 
   return (
